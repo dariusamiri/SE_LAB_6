@@ -165,7 +165,7 @@ public class CodeGenerator {
 
                 Symbol s = symbolTable.get(className, methodName, next.value);
                 varType t = varType.Int;
-                switch (s.type) {
+                switch (s.getType()) {
                     case Bool:
                         t = varType.Bool;
                         break;
@@ -193,7 +193,7 @@ public class CodeGenerator {
 
         Symbol s = symbolTable.get(symbolStack.pop(), symbolStack.pop());
         varType t = varType.Int;
-        switch (s.type) {
+        switch (s.getType()) {
             case Bool:
                 t = varType.Bool;
                 break;
@@ -261,7 +261,7 @@ public class CodeGenerator {
         try {
             Symbol s = symbolTable.getNextParam(callStack.peek(), methodName);
             varType t = varType.Int;
-            switch (s.type) {
+            switch (s.getType()) {
                 case Bool:
                     t = varType.Bool;
                     break;
