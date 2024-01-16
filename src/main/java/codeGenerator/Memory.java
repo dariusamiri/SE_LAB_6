@@ -26,7 +26,6 @@ public class Memory {
     }
 
     public int getDateAddress() {
-        lastDataAddress += dataSize;
         return lastDataAddress - dataSize;
     }
 
