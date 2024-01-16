@@ -314,7 +314,11 @@ public class CodeGenerator {
         Address temp = new Address(memory.getTemp(), varType.Int);
         Address s2 = ss.pop();
         Address s1 = ss.pop();
-        if (s1.varType != varType.Int || s2.varType != varType.Int) {
+
+        boolean s1IsInt = s1.varType != varType.Int;
+        boolean s2IsInt = s2.varType != varType.Int;
+
+        if (s1IsInt || s2IsInt) {
             ErrorHandler.printError("In sub two operands must be integer");
         }
         memory.add3AddressCode(Operation.SUB, s1, s2, temp);
